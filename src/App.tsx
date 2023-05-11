@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+
+const[userName, setUserName] = useState('');
+const[password, setPassword] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="form-structor">
+          <div className="signup">
+            <h2 className="form-title" id="signup">
+              <span>or</span>Login JUNE
+            </h2>
+            <div className="form-holder">
+				<input 
+					type="email" 
+					className="input"
+					placeholder="Email"  
+					value={userName}
+					onChange={(e)=> setUserName(e.target.value)}
+				/>
+				<input 
+					type="password" 
+					className="input"
+					placeholder="Password"
+					value={password}
+					onChange={(e)=> setPassword(e.target.value)}
+				/>
+            </div>
+            <button type="submit" className="submit-btn">Sign In</button>
+          </div>
+          <div className="login slide-up">
+            <div className="center">
+              <h2 className="form-title">
+                Hand Crafted by Salman
+              </h2>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
